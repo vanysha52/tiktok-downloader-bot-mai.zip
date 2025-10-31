@@ -39,7 +39,7 @@ async def send_welcome(message: types.Message):
     await message.reply(languages[user_lang]["help"])
 
 
-@dp.message_handler(regexp='https://\w{1,3}?\.?\w+\.\w{1,3}/')
+@dp.message_handler(regexp=r'https://\w{1,3}?\.?\w+\.\w{1,3}/')
 @dp.throttled(rate=3)
 async def tt_download2(message: types.Message):
     user_lang = get_user_lang(message.from_user.locale)
